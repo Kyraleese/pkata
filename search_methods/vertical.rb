@@ -7,9 +7,6 @@ module SearchMethods
       @grid = grid.transpose
     end
 
-    def index_of_word(list, word)
-      list.join('').index(word)
-    end
 
     def coordinates_of_word(grid, target_word)
       coords = [] 

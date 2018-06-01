@@ -3,10 +3,6 @@ require_relative "base.rb"
 module SearchMethods
   class Horizontal < Base
 
-    def index_of_word(list, word)
-      list.join('').index(word)
-    end
-
     def coordinates_of_word(grid, target_word)
       coords = [] 
       grid.each_with_index do |row, i|
