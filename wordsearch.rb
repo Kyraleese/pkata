@@ -10,4 +10,8 @@ class Wordsearch
       @grid << grid_line.strip.split(',')
     end
   end
+
+  def index_of_word(list, word)
+    list.join('').index(word)
+  end
 end

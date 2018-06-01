@@ -29,4 +29,14 @@ describe Wordsearch do
       ])
     end
   end
+
+  context "detect word" do
+    it "finds the starting index of word in a list" do
+      wordsearch = Wordsearch.new("spec/data/test.txt")
+      list = wordsearch.grid[9]
+      word = wordsearch.wordbank[8]
+  
+      expect(wordsearch.index_of_word(list, word)).to eq(0) 
+    end
+  end
 end
