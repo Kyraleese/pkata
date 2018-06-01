@@ -63,7 +63,17 @@ describe SearchMethods::Vertical do
 
       end
     end
+  end
 
+  context "search for word" do
+    describe "#search_result" do
+      it "returns proper output string" do
+        word = 'TIKA'
+        word_location = [[5,4], [5,5], [5,6], [5,7]]
+
+        expect(subject.search_result(word, word_location)).to eq("TIKA: (4,5), (5,5), (6,5), (7,5)")
+      end
+    end
   end
 
 end
