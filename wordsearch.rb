@@ -23,7 +23,7 @@ class Wordsearch
     (0..(word.length - 1)).map{|r| "(#{r + row},#{col})"}.join(', ')
   end
 
-  def search(target_word)
+  def horizontal_search(target_word)
     search_result = ""
     @grid.each_with_index do |row, i|
       idx = index_of_word(row, target_word)
