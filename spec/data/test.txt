@@ -4,9 +4,9 @@ E,I,L,O,W,Y,A,E,X,K,A,R,I,M,U
 R,B,V,N,M,I,J,C,P,T,H,U,X,X,Z 
 K,M,O,E,S,A,T,A,N,I,S,T,A,M,Q 
 A,A,P,T,R,T,R,J,F,Q,V,S,H,K,J 
-W,P,L,M,M,W,I,A,M,X,D,A,S,B,L 
-Y,I,P,Q,G,D,I,K,C,Q,G,A,Z,M,G 
-N,Q,A,E,U,J,B,N,A,O,O,K,N,U,V 
+W,P,L,M,M,I,W,A,M,X,D,A,S,B,L 
+Y,I,P,Q,G,K,I,K,C,Q,G,A,Z,M,G 
+N,Q,A,E,U,A,B,N,A,O,O,K,N,U,V 
 L,U,W,I,E,J,D,T,D,J,L,P,D,Y,P 
 T,A,S,S,L,E,H,O,F,F,D,U,Q,U,I 
 Z,T,F,V,P,D,S,P,P,I,M,Y,V,K,T 

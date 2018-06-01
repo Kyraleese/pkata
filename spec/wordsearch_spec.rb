@@ -16,9 +16,9 @@ describe Wordsearch do
         ['R','B','V','N','M','I','J','C','P','T','H','U','X','X','Z'],
         ['K','M','O','E','S','A','T','A','N','I','S','T','A','M','Q'],
         ['A','A','P','T','R','T','R','J','F','Q','V','S','H','K','J'],
-        ['W','P','L','M','M','W','I','A','M','X','D','A','S','B','L'],
-        ['Y','I','P','Q','G','D','I','K','C','Q','G','A','Z','M','G'],
-        ['N','Q','A','E','U','J','B','N','A','O','O','K','N','U','V'],
+        ['W','P','L','M','M','I','W','A','M','X','D','A','S','B','L'],
+        ['Y','I','P','Q','G','K','I','K','C','Q','G','A','Z','M','G'],
+        ['N','Q','A','E','U','A','B','N','A','O','O','K','N','U','V'],
         ['L','U','W','I','E','J','D','T','D','J','L','P','D','Y','P'],
         ['T','A','S','S','L','E','H','O','F','F','D','U','Q','U','I'],
         ['Z','T','F','V','P','D','S','P','P','I','M','Y','V','K','T'],
@@ -57,12 +57,30 @@ describe Wordsearch do
 
       end
     end
+
+    describe "#vertical_location_of_word" do
+      it "returns the indices of a word" do
+        row = 4
+        col = 5
+        word = subject.wordbank[9]
+
+        expect(subject.vertical_location_of_word(row, col, word)).to eq("(4,5), (5,5), (6,5), (7,5)")
+      end
+    end
   end
 
   context "horizontal search" do
     context "-> left to right" do
       it "returns location of TASSLEHOFF" do
         expect(subject.search("TASSLEHOFF")).to eq("TASSLEHOFF: (9,0), (9,1), (9,2), (9,3), (9,4), (9,5), (9,6), (9,7), (9,8), (9,9)")
+      end
+    end
+  end
+
+  context "vertical search" do
+    context "-> top to bottom" do
+      xit "returns location of TIKA" do
+        expect(subject.vertical_search("TIKA")).to eq("TIKA: (4,5), (5,5), (6,5), (7,5)")
       end
     end
   end

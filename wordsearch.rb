@@ -19,6 +19,10 @@ class Wordsearch
     (col..(word.length - 1)).map{|c| "(#{row},#{c})"}.join(', ')
   end
 
+  def vertical_location_of_word(row, col, word)
+    (0..(word.length - 1)).map{|r| "(#{r + row},#{col})"}.join(', ')
+  end
+
   def search(target_word)
     search_result = ""
     @grid.each_with_index do |row, i|
@@ -26,6 +30,19 @@ class Wordsearch
       next unless !!idx
 
       search_result = "#{target_word}: #{location_of_word(i, idx, target_word)}"
+      break
+    end
+
+    search_result
+  end
+
+  def vertical_search(target_word)
+    search_result = ""
+    @grid.transpose.each_with_index do |col, i|
+      idx = index_of_word(col, target_word)
+      next unless !!idx
+
+      search_result = "#{target_word}: #{vertical_location_of_word(col, i, target_word)}"
       break
     end
 
