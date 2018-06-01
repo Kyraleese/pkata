@@ -67,6 +67,14 @@ describe SearchMethods::Horizontal do
 
       end
 
+      it "returns [nil, nil] when no coords are passsed" do
+        row = nil
+        col = nil
+        word = "FOO"
+
+        expect(subject.full_location_of_word(row, col, word)).to eq([[nil, nil]])
+      end
+
     end
 
   end

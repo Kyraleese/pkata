@@ -20,8 +20,7 @@ class Wordsearch
 
     @wordbank.each do |word|
       row, col = horizontal_searcher.coordinates_of_word(word)
-      puts "R: #{row.to_i}, C: #{col.to_i}"
-      word_loc = horizontal_searcher.full_location_of_word(row.to_i, col.to_i, word)
+      word_loc = horizontal_searcher.full_location_of_word(row, col, word)
       @search_results << horizontal_searcher.search_result(word, word_loc)
     end
   end
