@@ -51,6 +51,12 @@ describe Wordsearch do
       end
     end
 
+    describe "#coordinates_of_word" do
+      it "returns the x,y coordinates of the word in grid" do
+        expect(subject.coordinates_of_word(subject.horizontal_grid, "TASSLEHOFF")).to eq([9,0])
+      end
+    end
+
     describe "#location_of_word" do
       it "returns the indices of a word" do
         row = 9

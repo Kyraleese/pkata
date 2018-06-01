@@ -17,6 +17,18 @@ class Wordsearch
     list.join('').index(word)
   end
 
+  def coordinates_of_word(grid, target_word)
+    coords = [] 
+    grid.each_with_index do |row, i|
+      x = index_of_word(row, target_word)
+      next unless !!x
+
+      coords = [i, x]
+    end
+
+    coords
+  end
+
   def location_of_word(row, col, word)
     (0..(word.length - 1)).map{|c| "(#{row},#{c + col})"}.join(', ')
   end
