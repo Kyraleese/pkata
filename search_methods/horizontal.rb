@@ -22,6 +22,8 @@ module SearchMethods
       coords
     end
 
-
+    def full_location_of_word(row, col, target_word)
+      (col..(col + target_word.length - 1)).map{|c| [row, c] }
+    end
   end
 end

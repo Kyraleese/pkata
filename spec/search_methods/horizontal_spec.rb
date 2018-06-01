@@ -53,6 +53,18 @@ describe SearchMethods::Horizontal do
       end
     end
 
+    describe "#full_location_of_word" do
+      it "returns the indices of a word" do
+        row = 9
+        col = 0
+        word = 'TASSLEHOFF'
+
+        expect(subject.full_location_of_word(row, col, word)).to eq([[9,0], [9,1], [9,2], [9,3], [9,4], [9,5], [9,6], [9,7], [9,8], [9,9]])
+
+      end
+    end
+
+
   end
   
 end
