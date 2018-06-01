@@ -53,6 +53,17 @@ describe SearchMethods::Vertical do
       end
     end
 
+    describe "#full_location_of_word" do
+      it "returns the indices of a word" do
+        row = 5
+        col = 4
+        word = 'TIKA'
+
+        expect(subject.full_location_of_word(row, col, word)).to eq([[5,4], [5,5], [5,6], [5,7]])
+
+      end
+    end
+
   end
 
 end
