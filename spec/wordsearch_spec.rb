@@ -10,7 +10,7 @@ describe Wordsearch do
     end
 
     it "should load the word grid from the file" do
-      expect(subject.horizontal_grid).to eq([
+      expect(subject.grid).to eq([
         ['R','W','N','H','A','N','A','R','U','A','L','M','S','E','Q'],
         ['E','I','L','O','W','Y','A','E','X','K','A','R','I','M','U'],
         ['R','B','V','N','M','I','J','C','P','T','H','U','X','X','Z'],
@@ -28,70 +28,6 @@ describe Wordsearch do
         ['H','Z','M','N','D','A','A','B','G','J','F','V','E','L','K']
       ])
     end
-
-    it "should keep a transposed grid for vertical searches" do
-      expect(subject.vertical_grid).to eq(subject.horizontal_grid.transpose)
-    end
   end
 
-  context "detect word" do
-    describe "#index_of_word" do
-      it "finds the starting index of word in a list" do
-        list = subject.horizontal_grid[9]
-        word = subject.wordbank[8]
-    
-        expect(subject.index_of_word(list, word)).to eq(0) 
-      end
-
-      it "returns nil when it can't find the word in the list" do
-        list = subject.horizontal_grid[9]
-        word = "FOO"
-
-        expect(subject.index_of_word(list, word)).to eq(nil)
-      end
-    end
-
-    describe "#coordinates_of_word" do
-      it "returns the x,y coordinates of the word in grid" do
-        expect(subject.coordinates_of_word(subject.horizontal_grid, "TASSLEHOFF")).to eq([9,0])
-      end
-    end
-
-    describe "#horizontal_location_of_word" do
-      it "returns the indices of a word" do
-        row = 9
-        col = 0
-        word = subject.wordbank[8]
-
-        expect(subject.horizontal_location_of_word(row, col, word)).to eq("(9,0), (9,1), (9,2), (9,3), (9,4), (9,5), (9,6), (9,7), (9,8), (9,9)")
-
-      end
-    end
-
-    describe "#vertical_location_of_word" do
-      it "returns the indices of a word" do
-        row = 4
-        col = 5
-        word = subject.wordbank[9]
-
-        expect(subject.vertical_location_of_word(row, col, word)).to eq("(4,5), (5,5), (6,5), (7,5)")
-      end
-    end
-  end
-
-  context "horizontal search" do
-    context "-> left to right" do
-      it "returns location of TASSLEHOFF" do
-        expect(subject.horizontal_search("TASSLEHOFF")).to eq("TASSLEHOFF: (9,0), (9,1), (9,2), (9,3), (9,4), (9,5), (9,6), (9,7), (9,8), (9,9)")
-      end
-    end
-  end
-
-  context "vertical search" do
-    context "-> top to bottom" do
-      it "returns location of TIKA" do
-        expect(subject.vertical_search("TIKA")).to eq("TIKA: (4,5), (5,5), (6,5), (7,5)")
-      end
-    end
-  end
 end
