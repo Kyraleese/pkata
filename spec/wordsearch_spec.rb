@@ -2,15 +2,15 @@ require_relative "../wordsearch.rb"
 
 describe Wordsearch do
 
+  let(:subject) { Wordsearch.new("spec/data/test.txt") }
+
   context "initialization" do
     it "should load the word bank from the file" do
-      wordsearch = Wordsearch.new("spec/data/test.txt")
-      expect(wordsearch.wordbank).to eq(['CARAMON','FLINT','GOLDMOON','LAURANA','RAISTLIN','RIVERWIND','STURM','TANIS','TASSLEHOFF','TIKA'])
+      expect(subject.wordbank).to eq(['CARAMON','FLINT','GOLDMOON','LAURANA','RAISTLIN','RIVERWIND','STURM','TANIS','TASSLEHOFF','TIKA'])
     end
 
     it "should load the word grid from the file" do
-      wordsearch = Wordsearch.new("spec/data/test.txt")
-      expect(wordsearch.grid).to eq([
+      expect(subject.grid).to eq([
         ['R','W','N','H','A','N','A','R','U','A','L','M','S','E','Q'],
         ['E','I','L','O','W','Y','A','E','X','K','A','R','I','M','U'],
         ['R','B','V','N','M','I','J','C','P','T','H','U','X','X','Z'],
@@ -32,11 +32,10 @@ describe Wordsearch do
 
   context "detect word" do
     it "finds the starting index of word in a list" do
-      wordsearch = Wordsearch.new("spec/data/test.txt")
-      list = wordsearch.grid[9]
-      word = wordsearch.wordbank[8]
+      list = subject.grid[9]
+      word = subject.wordbank[8]
   
-      expect(wordsearch.index_of_word(list, word)).to eq(0) 
+      expect(subject.index_of_word(list, word)).to eq(0) 
     end
   end
 end
