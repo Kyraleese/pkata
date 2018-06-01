@@ -66,6 +66,18 @@ describe SearchMethods::DiagonalDown do
       end
     end
 
+    describe "#full_location_of_word" do
+      it "returns the indices of a word" do
+        row = 0
+        col = 15
+        word = 'RIVERWIND'
+
+        expect(subject.full_location_of_word(row, col, word)).to eq([[0,0], [1,1], [2,2], [3,3], [4,4], [5,5], [6,6], [7,7], [8,8]])
+
+      end
+    end
+
+
   end
 
 
