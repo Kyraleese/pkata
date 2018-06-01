@@ -21,7 +21,7 @@ describe SearchMethods::Base do
     ]
   }
 
-  let(:subject) { SearchMethods::Horizontal.new(wordgrid) }
+  let(:subject) { SearchMethods::Base.new(wordgrid) }
 
   context "initialization" do
     it "should load the word grid in the right format" do
