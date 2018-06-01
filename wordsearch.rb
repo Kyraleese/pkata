@@ -1,8 +1,13 @@
 class Wordsearch
-  attr_accessor :wordbank
+  attr_accessor :wordbank, :grid
 
   def initialize(filename)
     input_file = File.open(filename, 'r')
-    @wordbank = input_file.gets.chomp.split(',')
+    @wordbank = input_file.gets.strip.split(',')
+
+    @grid = []
+    input_file.each do |grid_line|
+      @grid << grid_line.strip.split(',')
+    end
   end
 end
