@@ -1,6 +1,7 @@
+require_relative "base.rb"
+
 module SearchMethods
-  class Vertical
-    attr_accessor :grid
+  class Vertical < Base
 
     def initialize(grid)
       @grid = grid.transpose

@@ -1,10 +1,7 @@
-module SearchMethods
-  class Horizontal
-    attr_accessor :grid
+require_relative "base.rb"
 
-    def initialize(grid)
-      @grid = grid
-    end
+module SearchMethods
+  class Horizontal < Base
 
     def index_of_word(list, word)
       list.join('').index(word)
