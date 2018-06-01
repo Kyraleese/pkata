@@ -59,6 +59,15 @@ describe SearchMethods::DiagonalDown do
         expect(subject.index_of_word(list, word)).to eq(0) 
       end
     end
+
+    describe "#coordinates_of_word" do
+      it "returns the x,y coordinates of the word in grid" do
+        expect(subject.coordinates_of_word("RIVERWIND")).to eq([15,0])
+      end
+    end
+
   end
+
+
 
 end
