@@ -19,4 +19,17 @@ class Wordsearch
     (col..(word.length - 1)).map{|c| "(#{row},#{c})"}.join(', ')
   end
 
+  def search(target_word)
+    search_result = ""
+    @grid.each_with_index do |row, i|
+      idx = index_of_word(row, target_word)
+      next unless !!idx
+
+      search_result = "#{target_word}: #{location_of_word(i, idx, target_word)}"
+      break
+    end
+
+    search_result
+  end
+
 end

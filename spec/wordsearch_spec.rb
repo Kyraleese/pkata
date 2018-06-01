@@ -58,4 +58,12 @@ describe Wordsearch do
       end
     end
   end
+
+  context "horizontal search" do
+    context "-> left to right" do
+      it "returns location of TASSLEHOFF" do
+        expect(subject.search("TASSLEHOFF")).to eq("TASSLEHOFF: (9,0), (9,1), (9,2), (9,3), (9,4), (9,5), (9,6), (9,7), (9,8), (9,9)")
+      end
+    end
+  end
 end
