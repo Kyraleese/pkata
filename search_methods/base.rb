@@ -10,9 +10,9 @@ module SearchMethods
       list.join('').index(word)
     end
 
-    def coordinates_of_word(grid, target_word)
-      coords = [] 
-      grid.each_with_index do |row, i|
+    def coordinates_of_word(target_word)
+      coords = [nil, nil] 
+      @grid.each_with_index do |row, i|
         x = index_of_word(row, target_word)
         next unless !!x
 

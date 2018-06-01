@@ -49,7 +49,7 @@ describe SearchMethods::Vertical do
 
     describe "#coordinates_of_word" do
       it "returns the x,y coordinates of the word in grid" do
-        expect(subject.coordinates_of_word(subject.grid, "TIKA")).to eq([5,4])
+        expect(subject.coordinates_of_word("TIKA")).to eq([5,4])
       end
     end
 

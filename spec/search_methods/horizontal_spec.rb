@@ -49,7 +49,11 @@ describe SearchMethods::Horizontal do
 
     describe "#coordinates_of_word" do
       it "returns the x,y coordinates of the word in grid" do
-        expect(subject.coordinates_of_word(subject.grid, "TASSLEHOFF")).to eq([9,0])
+        expect(subject.coordinates_of_word("TASSLEHOFF")).to eq([9,0])
+      end
+
+      it "returns nil, nil coordinates when words is not found" do
+        expect(subject.coordinates_of_word("FOO")).to eq([nil, nil])
       end
     end
 
