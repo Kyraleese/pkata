@@ -62,9 +62,20 @@ describe SearchMethods::Horizontal do
         expect(subject.full_location_of_word(row, col, word)).to eq([[9,0], [9,1], [9,2], [9,3], [9,4], [9,5], [9,6], [9,7], [9,8], [9,9]])
 
       end
+
     end
 
+  end
 
+  context "search for word" do
+    describe "#search_result" do
+      it "returns proper output string" do
+        word = 'TASSLEHOFF'
+        word_location = [[9,0], [9,1], [9,2], [9,3], [9,4], [9,5], [9,6], [9,7], [9,8], [9,9]]
+
+        expect(subject.search_result(word, word_location)).to eq("TASSLEHOFF: (9,0), (9,1), (9,2), (9,3), (9,4), (9,5), (9,6), (9,7), (9,8), (9,9)")
+      end
+    end
   end
   
 end
