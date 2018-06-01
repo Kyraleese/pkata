@@ -17,6 +17,7 @@ module SearchMethods
     end
 
     def full_location_of_word(row, col, word)
+      return [[row, col]] if row.nil? || col.nil?
       col = col - @original_grid_length + row
 
       locs = []
