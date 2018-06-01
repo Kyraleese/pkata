@@ -1,14 +1,16 @@
 class Wordsearch
-  attr_accessor :wordbank, :grid
+  attr_accessor :wordbank, :horizontal_grid, :vertical_grid
 
   def initialize(filename)
     input_file = File.open(filename, 'r')
     @wordbank = input_file.gets.strip.split(',')
 
-    @grid = []
+    @horizontal_grid = []
     input_file.each do |grid_line|
-      @grid << grid_line.strip.split(',')
+      @horizontal_grid << grid_line.strip.split(',')
     end
+
+    @vertical_grid = @horizontal_grid.transpose()
   end
 
   def index_of_word(list, word)
@@ -25,7 +27,7 @@ class Wordsearch
 
   def horizontal_search(target_word)
     search_result = ""
-    @grid.each_with_index do |row, i|
+    @horizontal_grid.each_with_index do |row, i|
       idx = index_of_word(row, target_word)
       next unless !!idx
 
@@ -38,7 +40,7 @@ class Wordsearch
 
   def vertical_search(target_word)
     search_result = ""
-    @grid.transpose.each_with_index do |col, i|
+    @vertical_grid.each_with_index do |col, i|
       idx = index_of_word(col, target_word)
       next unless !!idx
 

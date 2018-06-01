@@ -10,7 +10,7 @@ describe Wordsearch do
     end
 
     it "should load the word grid from the file" do
-      expect(subject.grid).to eq([
+      expect(subject.horizontal_grid).to eq([
         ['R','W','N','H','A','N','A','R','U','A','L','M','S','E','Q'],
         ['E','I','L','O','W','Y','A','E','X','K','A','R','I','M','U'],
         ['R','B','V','N','M','I','J','C','P','T','H','U','X','X','Z'],
@@ -28,19 +28,23 @@ describe Wordsearch do
         ['H','Z','M','N','D','A','A','B','G','J','F','V','E','L','K']
       ])
     end
+
+    it "should keep a transposed grid for vertical searches" do
+      expect(subject.vertical_grid).to eq(subject.horizontal_grid.transpose)
+    end
   end
 
   context "detect word" do
     describe "#index_of_word" do
       it "finds the starting index of word in a list" do
-        list = subject.grid[9]
+        list = subject.horizontal_grid[9]
         word = subject.wordbank[8]
     
         expect(subject.index_of_word(list, word)).to eq(0) 
       end
 
       it "returns nil when it can't find the word in the list" do
-        list = subject.grid[9]
+        list = subject.horizontal_grid[9]
         word = "FOO"
 
         expect(subject.index_of_word(list, word)).to eq(nil)
