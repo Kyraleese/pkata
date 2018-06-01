@@ -50,4 +50,15 @@ describe SearchMethods::DiagonalDown do
     end
   end
 
+  context "detect word" do
+    describe "#index_of_word" do
+      it "finds the starting index of word in a list" do
+        list = subject.grid[15]
+        word = 'RIVERWIND'
+    
+        expect(subject.index_of_word(list, word)).to eq(0) 
+      end
+    end
+  end
+
 end
