@@ -6,5 +6,9 @@ module SearchMethods
       @grid = grid
     end
 
+    def index_of_word(list, word)
+      list.join('').index(word)
+    end
+
   end
 end
