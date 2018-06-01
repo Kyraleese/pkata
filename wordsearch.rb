@@ -42,7 +42,7 @@ class Wordsearch
       idx = index_of_word(col, target_word)
       next unless !!idx
 
-      search_result = "#{target_word}: #{vertical_location_of_word(col, i, target_word)}"
+      search_result = "#{target_word}: #{vertical_location_of_word(idx, i, target_word)}"
       break
     end
 

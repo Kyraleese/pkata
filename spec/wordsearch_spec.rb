@@ -79,7 +79,7 @@ describe Wordsearch do
 
   context "vertical search" do
     context "-> top to bottom" do
-      xit "returns location of TIKA" do
+      it "returns location of TIKA" do
         expect(subject.vertical_search("TIKA")).to eq("TIKA: (4,5), (5,5), (6,5), (7,5)")
       end
     end
