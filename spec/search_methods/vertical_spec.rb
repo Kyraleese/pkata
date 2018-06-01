@@ -51,7 +51,7 @@ describe SearchMethods::Vertical do
         col = 4
         word = 'TIKA'
 
-        expect(subject.full_location_of_word(row, col, word)).to eq([[5,4], [5,5], [5,6], [5,7]])
+        expect(subject.full_location_of_word(row, col, word)).to eq([[4,5], [5,5], [6,5], [7,5]])
 
       end
     end
@@ -61,7 +61,7 @@ describe SearchMethods::Vertical do
     describe "#search_result" do
       it "returns proper output string" do
         word = 'TIKA'
-        word_location = [[5,4], [5,5], [5,6], [5,7]]
+        word_location = [[4,5], [5,5], [6,5], [7,5]]
 
         expect(subject.search_result(word, word_location)).to eq("TIKA: (4,5), (5,5), (6,5), (7,5)")
       end

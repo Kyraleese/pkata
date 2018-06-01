@@ -7,12 +7,10 @@ module SearchMethods
       @grid = grid.transpose
     end
 
-    # since we transposed the grid so we could more easily search, 
-    # we want (y,x) results instead of (x,y) to make our row 
-    # become a column in the original
-    def search_result(word, word_location)
-      locs = word_location.map{|loc| "(#{loc[1]},#{loc[0]})"}.join(', ')
-      "#{word}: #{locs}"
+
+    def full_location_of_word(row, col, target_word)
+      return [[row, col]] if row.nil? || col.nil?
+      (col..(col + target_word.length - 1)).map{|c| [c, row] }
     end
 
   end
