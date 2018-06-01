@@ -1,5 +1,3 @@
-require_relative "search_methods/horizontal.rb"
-
 class Wordsearch
   attr_accessor :wordbank, :grid, :search_results
 
