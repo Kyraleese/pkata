@@ -16,7 +16,7 @@ class Wordsearch
   end
 
   def location_of_word(row, col, word)
-    (col..(word.length - 1)).map{|c| "(#{row},#{c})"}.join(', ')
+    (0..(word.length - 1)).map{|c| "(#{row},#{c + col})"}.join(', ')
   end
 
   def vertical_location_of_word(row, col, word)
