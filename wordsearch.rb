@@ -38,29 +38,15 @@ class Wordsearch
   end
 
   def horizontal_search(target_word)
-    search_result = ""
-    @horizontal_grid.each_with_index do |row, i|
-      idx = index_of_word(row, target_word)
-      next unless !!idx
+    x, y = coordinates_of_word(@horizontal_grid, target_word)
 
-      search_result = "#{target_word}: #{location_of_word(i, idx, target_word)}"
-      break
-    end
-
-    search_result
+    "#{target_word}: #{location_of_word(x, y, target_word)}"
   end
 
   def vertical_search(target_word)
-    search_result = ""
-    @vertical_grid.each_with_index do |col, i|
-      idx = index_of_word(col, target_word)
-      next unless !!idx
+    x, y = coordinates_of_word(@vertical_grid, target_word)
 
-      search_result = "#{target_word}: #{vertical_location_of_word(idx, i, target_word)}"
-      break
-    end
-
-    search_result
+    "#{target_word}: #{vertical_location_of_word(y, x, target_word)}"
   end
 
 end
