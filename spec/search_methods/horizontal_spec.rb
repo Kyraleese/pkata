@@ -38,6 +38,13 @@ describe SearchMethods::Horizontal do
         expect(subject.index_of_word(list, word)).to eq(0) 
       end
 
+      it "returns nil when it can't find the word in the list" do
+        list = subject.grid[9]
+        word = "FOO"
+
+        expect(subject.index_of_word(list, word)).to eq(nil)
+      end
+
     end
   end
   
