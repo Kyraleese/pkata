@@ -29,4 +29,23 @@ describe SearchMethods::Vertical do
     end
   end
 
+  context "detect word" do
+    describe "#index_of_word" do
+      it "finds the starting index of word in a list" do
+        list = subject.grid[5]
+        word = 'TIKA'
+    
+        expect(subject.index_of_word(list, word)).to eq(4) 
+      end
+
+      it "returns nil when it can't find the word in the list" do
+        list = subject.grid[5]
+        word = "FOO"
+
+        expect(subject.index_of_word(list, word)).to eq(nil)
+      end
+
+    end
+  end
+
 end
