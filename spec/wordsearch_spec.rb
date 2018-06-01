@@ -36,14 +36,14 @@ describe Wordsearch do
         search_results = [
           "CARAMON: (,)",
           "FLINT: (,)",
-          "GOLDMOON: (,)",
+          "GOLDMOON: (6,10), (7,10), (8,10), (9,10), (10,10), (11,10), (12,10), (13,10)",
           "LAURANA: (,)",
           "RAISTLIN: (,)",
           "RIVERWIND: (,)",
           "STURM: (,)",
           "TANIS: (3,6), (3,7), (3,8), (3,9), (3,10)",
           "TASSLEHOFF: (9,0), (9,1), (9,2), (9,3), (9,4), (9,5), (9,6), (9,7), (9,8), (9,9)",
-          "TIKA: (,)"
+          "TIKA: (4,5), (5,5), (6,5), (7,5)"
         ]
         subject.search
         expect(subject.search_results).to eq(search_results)
