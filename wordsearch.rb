@@ -14,4 +14,9 @@ class Wordsearch
   def index_of_word(list, word)
     list.join('').index(word)
   end
+
+  def location_of_word(row, col, word)
+    (col..(word.length - 1)).map{|c| "(#{row},#{c})"}.join(', ')
+  end
+
 end

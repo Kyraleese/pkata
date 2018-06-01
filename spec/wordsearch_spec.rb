@@ -31,18 +31,31 @@ describe Wordsearch do
   end
 
   context "detect word" do
-    it "finds the starting index of word in a list" do
-      list = subject.grid[9]
-      word = subject.wordbank[8]
-  
-      expect(subject.index_of_word(list, word)).to eq(0) 
+    describe "#index_of_word" do
+      it "finds the starting index of word in a list" do
+        list = subject.grid[9]
+        word = subject.wordbank[8]
+    
+        expect(subject.index_of_word(list, word)).to eq(0) 
+      end
+
+      it "returns nil when it can't find the word in the list" do
+        list = subject.grid[9]
+        word = "FOO"
+
+        expect(subject.index_of_word(list, word)).to eq(nil)
+      end
     end
 
-    it "returns nil when it can't find the word in the list" do
-      list = subject.grid[9]
-      word = "FOO"
+    describe "#location_of_word" do
+      it "returns the indices of a word" do
+        row = 9
+        col = 0
+        word = subject.wordbank[8]
 
-      expect(subject.index_of_word(list, word)).to eq(nil)
+        expect(subject.location_of_word(row, col, word)).to eq("(9,0), (9,1), (9,2), (9,3), (9,4), (9,5), (9,6), (9,7), (9,8), (9,9)")
+
+      end
     end
   end
 end
