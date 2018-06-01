@@ -32,18 +32,18 @@ describe Wordsearch do
 
   context "search" do
     describe "#solve" do
-      xit "finds all words" do
+      it "finds all words" do
         search_results = [
-          "CARAMON: (nil,nil)",
-          "FLINT: (nil, nil)",
-          "GOLDMOON: (nil, nil)",
-          "LAURANA: (nil, nil)",
-          "RAISTLIN: (nil, nil)",
-          "RIVERWIND: (nil, nil)",
-          "STURM: (nil, nil)",
+          "CARAMON: (,)",
+          "FLINT: (,)",
+          "GOLDMOON: (,)",
+          "LAURANA: (,)",
+          "RAISTLIN: (,)",
+          "RIVERWIND: (,)",
+          "STURM: (,)",
           "TANIS: (3,6), (3,7), (3,8), (3,9), (3,10)",
           "TASSLEHOFF: (9,0), (9,1), (9,2), (9,3), (9,4), (9,5), (9,6), (9,7), (9,8), (9,9)",
-          "TIKA: (nil, nil)"
+          "TIKA: (,)"
         ]
         subject.search
         expect(subject.search_results).to eq(search_results)
