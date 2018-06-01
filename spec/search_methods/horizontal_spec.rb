@@ -46,6 +46,13 @@ describe SearchMethods::Horizontal do
       end
 
     end
+
+    describe "#coordinates_of_word" do
+      it "returns the x,y coordinates of the word in grid" do
+        expect(subject.coordinates_of_word(subject.grid, "TASSLEHOFF")).to eq([9,0])
+      end
+    end
+
   end
   
 end
