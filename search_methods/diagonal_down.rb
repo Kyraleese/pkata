@@ -18,12 +18,11 @@ module SearchMethods
 
     def full_location_of_word(row, col, word)
       return [[row, col]] if row.nil? || col.nil?
-      col = col - @original_grid_length + row
-
+      row = row - @original_grid_length
       locs = []
 
       word.length.times do |i|
-        locs << [(row + i) , (col + i)]
+        locs << [(col + i) , (row + i)]
       end
 
       locs

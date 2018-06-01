@@ -13,8 +13,8 @@ class Wordsearch
     @search_results = []
 
     @search_methods = [
-      SearchMethods::Horizontal.new(@grid), 
-      SearchMethods::Vertical.new(@grid), 
+      SearchMethods::Horizontal.new(@grid.clone), 
+      SearchMethods::Vertical.new(@grid.clone), 
     ]
   end
 
