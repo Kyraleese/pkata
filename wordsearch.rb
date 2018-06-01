@@ -29,7 +29,7 @@ class Wordsearch
     coords
   end
 
-  def location_of_word(row, col, word)
+  def horizontal_location_of_word(row, col, word)
     (0..(word.length - 1)).map{|c| "(#{row},#{c + col})"}.join(', ')
   end
 
@@ -40,7 +40,7 @@ class Wordsearch
   def horizontal_search(target_word)
     x, y = coordinates_of_word(@horizontal_grid, target_word)
 
-    "#{target_word}: #{location_of_word(x, y, target_word)}"
+    "#{target_word}: #{horizontal_location_of_word(x, y, target_word)}"
   end
 
   def vertical_search(target_word)

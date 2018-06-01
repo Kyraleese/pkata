@@ -57,13 +57,13 @@ describe Wordsearch do
       end
     end
 
-    describe "#location_of_word" do
+    describe "#horizontal_location_of_word" do
       it "returns the indices of a word" do
         row = 9
         col = 0
         word = subject.wordbank[8]
 
-        expect(subject.location_of_word(row, col, word)).to eq("(9,0), (9,1), (9,2), (9,3), (9,4), (9,5), (9,6), (9,7), (9,8), (9,9)")
+        expect(subject.horizontal_location_of_word(row, col, word)).to eq("(9,0), (9,1), (9,2), (9,3), (9,4), (9,5), (9,6), (9,7), (9,8), (9,9)")
 
       end
     end
