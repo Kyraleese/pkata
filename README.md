@@ -4,13 +4,16 @@
 
 Step 1:
   Clone this repository to your system
+  
 Step 2:
   From your local copy of the repository, run the following command: 'gem install rake' 
   (not strictly necessary to run from the repo, but you're going to be running other things here in further steps, so might as well do it here)
   Note: If you already have rake installed, you should be able to skip this step
+  
 Step 3:
   run 'rake install'
   Note: This will gem install bundler and then bundle install the bundle (which just has rspec)
+  
 Step 4:
   run 'rake test'
   Note: This will run the test suite located in /spec
@@ -43,5 +46,6 @@ Optional Step 5:
     Anything that creates a file of the format shown above should work.
 
   Step 2: Save the puzzle wherever you'd like.  I've created a /puzzles directory to serve as a home for these, but they can go anywhere, really.
+  
   Step 3: run rake check_grid["/path/to/puzzle/foo.txt"]
     Note: To see an example, I've added the puzzle above to /puzzles, and you can test it running "rake check_grid["puzzles/pkata.txt"]"
