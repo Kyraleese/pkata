@@ -1,3 +1,8 @@
+require_relative "search_methods/horizontal.rb"
+require_relative "search_methods/vertical.rb"
+require_relative "search_methods/diagonal_down.rb"
+require_relative "search_methods/diagonal_up.rb"
+
 class Wordsearch
   attr_accessor :wordbank, :grid, :search_results, :search_methods
 
