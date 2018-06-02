@@ -52,7 +52,14 @@ describe SearchMethods::Vertical do
         word = 'TIKA'
 
         expect(subject.full_location_of_word(row, col, word)).to eq([[4,5], [5,5], [6,5], [7,5]])
+      end
 
+      it "returns [nil, nil] when no coords are passsed" do
+        row = nil
+        col = nil
+        word = "FOO"
+
+        expect(subject.full_location_of_word(row, col, word)).to eq([[nil, nil]])
       end
     end
   end
