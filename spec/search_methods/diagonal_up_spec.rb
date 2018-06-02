@@ -83,7 +83,7 @@ describe SearchMethods::DiagonalUp do
         word = 'FLINT'
         word_location = [[14,10], [13,11], [12,12], [11,13], [10,14]]
 
-        expect(subject.search_result(word, word_location)).to eq("FLINT: (14,10), (13,11), (12,12), (11,13), (10,14)")
+        expect(subject.search_result(word, word_location)).to eq("FLINT: (10,14), (11,13), (12,12), (13,11), (14,10)")
       end
     end
   end

@@ -28,7 +28,7 @@ module SearchMethods
     end
 
     def search_result(word, word_location)
-      locs = word_location.map{|loc| "(#{loc[0]},#{loc[1]})"}.join(', ')
+      locs = word_location.map{|loc| "(#{loc[1]},#{loc[0]})"}.join(', ')
       "#{word}: #{locs}"
     end
   end

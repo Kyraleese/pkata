@@ -63,7 +63,7 @@ describe SearchMethods::Vertical do
         word = 'TIKA'
         word_location = [[4,5], [5,5], [6,5], [7,5]]
 
-        expect(subject.search_result(word, word_location)).to eq("TIKA: (4,5), (5,5), (6,5), (7,5)")
+        expect(subject.search_result(word, word_location)).to eq("TIKA: (5,4), (5,5), (5,6), (5,7)")
       end
     end
   end
