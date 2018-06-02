@@ -75,9 +75,18 @@ describe SearchMethods::DiagonalUp do
 
       end
     end
-
-
-
   end
+
+  context "search for word" do
+    describe "#search_result" do
+      it "returns proper output string" do
+        word = 'FLINT'
+        word_location = [[14,10], [13,11], [12,12], [11,13], [10,14]]
+
+        expect(subject.search_result(word, word_location)).to eq("FLINT: (14,10), (13,11), (12,12), (11,13), (10,14)")
+      end
+    end
+  end
+
 
 end
