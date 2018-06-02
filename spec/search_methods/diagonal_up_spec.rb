@@ -65,6 +65,18 @@ describe SearchMethods::DiagonalUp do
       end
     end
 
+    describe "#full_location_of_word" do
+      it "returns the indices of a word" do
+        row = 24
+        col = 0
+        word = 'FLINT'
+
+        expect(subject.full_location_of_word(row, col, word)).to eq([[14,10], [13,11], [12,12], [11,13], [10,14]])
+
+      end
+    end
+
+
 
   end
 

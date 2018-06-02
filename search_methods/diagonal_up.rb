@@ -16,5 +16,24 @@ module SearchMethods
       @grid = @grid.reverse.transpose
     end
 
+    def full_location_of_word(row, col, word)
+        return [[row, col]] if row.nil? || col.nil?
+
+        new_row = col
+        new_col = row
+
+        f_row = (@original_grid_length - 1) - new_row
+        f_col = new_col - f_row
+
+        locs = []
+
+        
+        word.length.times do |i|
+          locs << [(f_row - i) , (f_col + i)]
+        end
+
+        locs
+
+    end
   end
 end
