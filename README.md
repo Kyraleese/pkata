@@ -1,10 +1,6 @@
 # pkata -- Ruby
-
 # Your mileage may vary if running this on windows.  Instructions generated for a *nix system (so you should already have ruby installed)
-# Note: While there's an implied trust here, this *is* a public repo.  Good practice is to always make sure that the commands you run
-# do what you expect before you run them.  Since this is pretty small and it's easy to validate, I didn't generate a checksum; 
-# I've listed what the commands will do so that you can quickly validate.  I take no responsibility for any ill effects that occur should
-# you not check before you run.
+# Note: While there's an implied trust here, this *is* a public repo.  Good practice is to always make sure that the commands you run do what you expect before you run them.  Since this is pretty small and it's easy to validate, I didn't generate a checksum; I've listed what the commands will do so that you can quickly validate.  I take no responsibility for any ill effects that occur should you not check before you run.
 
 Step 1:
   Clone this repository to your system
