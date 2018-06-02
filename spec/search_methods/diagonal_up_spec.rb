@@ -72,8 +72,16 @@ describe SearchMethods::DiagonalUp do
         word = 'FLINT'
 
         expect(subject.full_location_of_word(row, col, word)).to eq([[14,10], [13,11], [12,12], [11,13], [10,14]])
-
       end
+
+      it "returns [nil, nil] when no coords are passsed" do
+        row = nil
+        col = nil
+        word = "FOO"
+
+        expect(subject.full_location_of_word(row, col, word)).to eq([[nil, nil]])
+      end
+
     end
   end
 
