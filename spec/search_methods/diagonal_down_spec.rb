@@ -73,7 +73,14 @@ describe SearchMethods::DiagonalDown do
         word = 'RIVERWIND'
 
         expect(subject.full_location_of_word(row, col, word)).to eq([[0,0], [1,1], [2,2], [3,3], [4,4], [5,5], [6,6], [7,7], [8,8]])
+      end
 
+      it "returns [nil, nil] when no coords are passsed" do
+        row = nil
+        col = nil
+        word = "FOO"
+
+        expect(subject.full_location_of_word(row, col, word)).to eq([[nil, nil]])
       end
     end
   end
