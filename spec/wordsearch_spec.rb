@@ -35,7 +35,7 @@ describe Wordsearch do
       it "finds all words" do
         search_results = [
           "CARAMON: (,)",
-          "FLINT: (,)",
+          "FLINT: (14,10), (13,11), (12,12), (11,13), (10,14)",
           "GOLDMOON: (6,10), (7,10), (8,10), (9,10), (10,10), (11,10), (12,10), (13,10)",
           "LAURANA: (,)",
           "RAISTLIN: (,)",

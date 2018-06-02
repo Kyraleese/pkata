@@ -15,7 +15,8 @@ class Wordsearch
     @search_methods = [
       SearchMethods::Horizontal.new(@grid.clone), 
       SearchMethods::Vertical.new(@grid.clone), 
-      SearchMethods::DiagonalDown.new(@grid.clone)
+      SearchMethods::DiagonalDown.new(@grid.clone),
+      SearchMethods::DiagonalUp.new(@grid.clone)
     ]
   end
 
