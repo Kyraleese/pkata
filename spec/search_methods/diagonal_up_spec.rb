@@ -59,6 +59,13 @@ describe SearchMethods::DiagonalUp do
       end
     end
 
+    describe "#coordinates_of_word" do
+      it "returns the x,y coordinates of the word in grid" do
+        expect(subject.coordinates_of_word("FLINT")).to eq([24,0])
+      end
+    end
+
+
   end
 
 end
