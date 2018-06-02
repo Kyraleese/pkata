@@ -76,10 +76,18 @@ describe SearchMethods::DiagonalDown do
 
       end
     end
-
-
   end
 
 
+  context "search for word" do
+    describe "#search_result" do
+      it "returns proper output string" do
+        word = 'RIVERWIND'
+        word_location = [[0,0], [1,1], [2,2], [3,3], [4,4], [5,5], [6,6], [7,7], [8,8]]
+
+        expect(subject.search_result(word, word_location)).to eq("RIVERWIND: (0,0), (1,1), (2,2), (3,3), (4,4), (5,5), (6,6), (7,7), (8,8)")
+      end
+    end
+  end
 
 end
