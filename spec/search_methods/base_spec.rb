@@ -55,4 +55,16 @@ describe SearchMethods::Base do
       end
     end
   end
+
+  context "search for word" do
+    describe "#search_result" do
+      it "returns proper output string" do
+        word = 'FLINT'
+        word_location = [[nil,nil]]
+
+        expect(subject.search_result(word, word_location)).to eq("FLINT: (,)")
+      end
+    end
+  end
+
 end
