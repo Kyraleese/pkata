@@ -42,8 +42,9 @@ Optional Step 5:
     W,Z,M,I,S,U,K,U,R,B,I,D,U,X,S
     K,Y,L,B,Q,Q,P,M,D,F,C,K,E,A,B
     
-    The generator used for this task was found at http://puzzlemaker.discoveryeducation.com/WordSearchSetupForm.asp?campaign=flyout_teachers_puzzle_wordcross
-    Anything that creates a file of the format shown above should work.
+  The generator used for this task was found at http://puzzlemaker.discoveryeducation.com/WordSearchSetupForm.asp?campaign=flyout_teachers_puzzle_wordcross
+  
+  Anything that creates a file of the format shown above should work.
 
   Step 2: Save the puzzle wherever you'd like.  I've created a /puzzles directory to serve as a home for these, but they can go anywhere, really.
   
