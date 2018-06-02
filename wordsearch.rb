@@ -24,8 +24,14 @@ class Wordsearch
     @wordbank.each do |word|
       search_result = ''
       @search_methods.each do |method|
+        #look forward
         row, col = method.coordinates_of_word(word)
         word_loc = method.full_location_of_word(row, col, word)
+        search_result = method.search_result(word, word_loc)
+        break unless search_result.include?('(,)')
+        #look backward
+        row, col = method.coordinates_of_word(word.reverse)
+        word_loc = method.full_location_of_word(row, col, word.reverse).reverse
         search_result = method.search_result(word, word_loc)
         break unless search_result.include?('(,)')
       end
